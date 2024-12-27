@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snigda Fin - KYC Form</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #495057;
+        }
+
+        /* Container for the form */
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form heading */
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Label styling */
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        /* Input fields */
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        button[type="submit"] {
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #495057;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Focus state for inputs */
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="file"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Submit button styling */
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Submit button hover effect */
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Invalid input field styling */
+        input:invalid {
+            border-color: #e74c3c;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            input[type="file"],
+            button[type="submit"] {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Complete Your KYC Form</h2>
+        <form action="/submit-kyc" method="POST" enctype="multipart/form-data">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required><br>
+
+            <label for="address">Residential Address</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="idUpload">Upload ID Document (e.g., Aadhaar, Passport)</label>
+            <input type="file" id="idUpload" name="idUpload" accept="image/*,.pdf" required><br>
+
+            <label for="selfieUpload">Upload Selfie (Optional for face matching)</label>
+            <input type="file" id="selfieUpload" name="selfieUpload" accept="image/*"><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
